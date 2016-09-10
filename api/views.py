@@ -5,9 +5,9 @@ from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
 from api.permissions import IsOwnerOrReadOnly
-from api.models import BelStop
+from api.models import BelStop, BelMeeting
 from api.serializers import UserSerializer
-from api.serializers import BelStopSerializer
+from api.serializers import BelStopSerializer, BelMeetingSerializer
 
 # Create your views here.
 
@@ -26,3 +26,8 @@ class BelStopViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+class BelMeetingViewSet(viewsets.ModelViewSet):
+    queryset = BelMeeting.objects.all()
+    serializer_class = BelMeetingSerializer
+

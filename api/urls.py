@@ -5,6 +5,7 @@ from rest_framework.routers import DefaultRouter
 # Creating the routers
 router = DefaultRouter(schema_title='Pastebin API')
 router.register(r'belstops', views.BelStopViewSet)
+router.register(r'belmeetings', views.BelMeetingViewSet)
 router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
