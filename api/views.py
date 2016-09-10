@@ -8,6 +8,8 @@ from api.permissions import IsOwnerOrReadOnly
 from api.models import BelStop
 from api.serializers import UserSerializer
 from api.serializers import BelStopSerializer
+from rest_framework.generics import CreateAPIView
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 
@@ -24,5 +26,11 @@ class BelStopViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+    #def perform_create(self, serializer):
+    #    serializer.save(owner=self.request.user)
+
+class CreateUserView(CreateAPIView):
+    model = get_user_model()
+    # set the permissions from the class
+    permission_classes = (permissions.AllowAny,)
+    serializer_class = UserSerializer
