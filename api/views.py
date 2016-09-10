@@ -26,10 +26,17 @@ class BelStopViewSet(viewsets.ModelViewSet):
     serializer_class = BelStopSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class BelMeetingViewSet(viewsets.ModelViewSet):
     queryset = BelMeeting.objects.all()
     serializer_class = BelMeetingSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                          IsOwnerOrReadOnly,)
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 class CreateUserView(CreateAPIView):
     model = get_user_model()

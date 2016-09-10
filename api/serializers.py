@@ -12,18 +12,20 @@ class BelStopSerializer(serializers.HyperlinkedModelSerializer):
             'spots_available','times_available', 'accepts_belPoints')
 
 class BelMeetingSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
     class Meta:
         model = BelMeeting
-        fields = ('belStop', 'datetime', 'topic')
+        fields = ('url', 'pk','owner','belStop', 'datetime', 'topic')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     belstops = serializers.HyperlinkedRelatedField(many=True, view_name='belstop-detail', read_only=True)
-    #bel_meetings  = serializers.HyperlinkedRelatedField(many=True, view_name='belmeeting-detail', read_only=True)
+    belmeetings  = serializers.HyperlinkedRelatedField(many=True, view_name='belmeeting-detail', read_only=True)
     password = serializers.CharField(write_only=True)
 
     class Meta:
         model = User
-        fields = ('url', 'pk', 'username','password', 'belstops')
+        fields = ('url', 'pk', 'username','password', 'belstops','belmeetings')
 
 
     def create(self, validated_data):
