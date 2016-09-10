@@ -33,11 +33,13 @@
               }
           }
       })
-      .state('dashboard.belstop', {
-          url: '/belstop?belstopId',
+      .state('dashboard.belmeeting', {
+          url: '/belmeeting/:belmeetingId',
           views: {
               'main@dashboard': {
-                  templateUrl: 'app/belstop/belstop.html',
+                  templateUrl: 'app/belmeeting/belmeeting.html',
+                  controller: 'BelmeetingController',
+                  controllerAs: 'belmeeting'
               }
           }
       });
