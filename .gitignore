@@ -89,10 +89,10 @@ ENV/
 .ropeproject
 
 # angular
-assets/node_modules/
-assets/bower_components/
-assets/coverage/
-assets/.sass-cache/
-assets/.idea/
-assets/.tmp/
-assets/dist/
+web-app/node_modules/
+web-app/bower_components/
+web-app/coverage/
+web-app/.sass-cache/
+web-app/.idea/
+web-app/.tmp/
+web-app/dist/
