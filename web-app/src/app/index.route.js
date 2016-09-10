@@ -20,11 +20,6 @@
           views: {
               '@': {
                   templateUrl: 'app/dashboard/dashboard.html',
-              },
-              'sidebar@dashboard': {
-                  templateUrl: 'app/sidebar/sidebar.html',
-                  controller: 'SidebarController',
-                  controllerAs: 'sidebar',
               }
           }
       })

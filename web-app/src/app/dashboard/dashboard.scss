@@ -1,0 +1,15 @@
+.dashboard {
+  &__hero {
+    background: $color-dark url(../assets/images/bg.jpg) no-repeat center center fixed;
+    height: 210px;
+
+    .page-header,
+    small {
+      color: white;
+    }
+  }
+
+  &__main {
+    padding-top: $space * 3;
+  }
+}
