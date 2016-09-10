@@ -87,3 +87,12 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# angular
+assets/node_modules/
+assets/bower_components/
+assets/coverage/
+assets/.sass-cache/
+assets/.idea/
+assets/.tmp/
+assets/dist/
