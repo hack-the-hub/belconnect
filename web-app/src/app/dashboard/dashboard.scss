@@ -1,0 +1,24 @@
+.dashboard {
+  &__hero {
+    background: white url(../assets/images/dashboard-bg.jpg) no-repeat center center fixed;
+    padding-bottom: $space * 3;
+
+    //height: 210px;
+
+    .page-header,
+    small {
+      color: white;
+    }
+  }
+
+  &__main .container {
+    padding-top: $space * 3;
+  }
+}
+
+.dashboard__footer {
+  background: $color-dark;
+  color: white;
+  margin-top: $space * 3;
+  padding: $space 0;
+}

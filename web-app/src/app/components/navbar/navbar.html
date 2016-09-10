@@ -1,16 +1,20 @@
-<nav class="navbar navbar-static-top navbar">
+<nav class="navbar navbar-static-top navbar navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">
+      <a class="navbar-brand" ui-sref="home">
         <img src="assets/images/logo.svg">
       </a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
       <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">Dashboard</a></li>
-        <li><a ng-href="#">About</a></li>
-        <li><a ng-href="#">Contact</a></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-href="#" class="navbar__btn-ghost">Become a Belhost</a></li>
+        <li><a ng-href="#">Account</a></li>
+        <li><a ng-href="#">Help</a></li>
       </ul>
     </div>
   </div>

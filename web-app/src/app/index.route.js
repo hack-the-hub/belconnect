@@ -20,11 +20,8 @@
           views: {
               '@': {
                   templateUrl: 'app/dashboard/dashboard.html',
-              },
-              'sidebar@dashboard': {
-                  templateUrl: 'app/sidebar/sidebar.html',
-                  controller: 'SidebarController',
-                  controllerAs: 'sidebar',
+                  controller: 'HomeController',
+                  controllerAs: 'home'
               }
           }
       })
@@ -33,8 +30,16 @@
           views: {
               'main@dashboard': {
                   templateUrl: 'app/home/home.html',
-                  controller: 'HomeController',
-                  controllerAs: 'home',
+              }
+          }
+      })
+      .state('dashboard.belmeeting', {
+          url: '/belmeeting/:belmeetingId',
+          views: {
+              'main@dashboard': {
+                  templateUrl: 'app/belmeeting/belmeeting.html',
+                  controller: 'BelmeetingController',
+                  controllerAs: 'belmeeting'
               }
           }
       });
