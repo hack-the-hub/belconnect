@@ -20,6 +20,8 @@
           views: {
               '@': {
                   templateUrl: 'app/dashboard/dashboard.html',
+                  controller: 'HomeController',
+                  controllerAs: 'home'
               }
           }
       })
@@ -28,8 +30,6 @@
           views: {
               'main@dashboard': {
                   templateUrl: 'app/home/home.html',
-                  controller: 'HomeController',
-                  controllerAs: 'home',
               }
           }
       });

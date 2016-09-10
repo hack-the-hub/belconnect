@@ -2,6 +2,7 @@
 	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 }
 .panel-login>.panel-heading {
+	margin-top: $space;
 	color: #00415d;
 	background-color: #fff;
 	border-color: #fff;
@@ -19,7 +20,6 @@
 	font-size: 18px;
 }
 .panel-login>.panel-heading hr{
-	margin-top: 10px;
 	margin-bottom: 0px;
 	clear: both;
 	border: 0;
@@ -79,4 +79,10 @@
 	color: #fff;
 	background-color: $color-secondary;
 	border-color: $color-secondary;
+}
+
+
+// overrides bootstrap
+.form-control {
+	border: none;
 }
