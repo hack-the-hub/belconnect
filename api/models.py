@@ -32,7 +32,7 @@ CATEGORIES = (
     (FAMILY,'Family'),
     (OTHER,'Other')
 )
-
+ 
 # Create your models here.
 class BelStop(models.Model):
     created = models.DateTimeField(auto_now_add=True)
