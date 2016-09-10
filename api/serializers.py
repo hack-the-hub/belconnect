@@ -9,3 +9,11 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('url', 'pk', 'username', 'bel_stops')
+
+class BelStopSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = BelStop
+        fields = ('url', 'pk', 'owner', 'location',
+            'spots_available','times_available', 'accepts_belPoints')
