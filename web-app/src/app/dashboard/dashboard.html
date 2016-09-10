@@ -1,43 +1,9 @@
 <acme-navbar></acme-navbar>
 
 <div class="dashboard">
-  <div class="dashboard__hero">
 
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="page-header">
-              <h1>There are fantastic meetings happening around Belfast</h1>
-              <h2>Connect with people who share your tastes</h2>
-            </div>
-          </div><!-- /.col-xs-12 -->
-        </div>
-        <!-- /row -->
+  <div ui-view="main" class="dashboard__main"></div>
 
-        <form name="myForm" class="row">
-
-          <div class="col-xs-7">
-            <input type="text" class="form-control" placeholder="Search for a belstop...">
-          </div>
-
-          <div class="col-xs-3">
-            <select name="mySelect" id="mySelect"
-              ng-options="option.name for option in data.availableOptions track by option.id"
-              ng-model="data.selectedOption" class="form-control"></select>
-          </div>
-
-          <div class="col-xs-2">
-            <button class="btn btn-success" type="button">Go!</button>
-          </div>
-
-        </form>
-
-      </div>
-  </div>
-
-  <div class="container">
-    <div ui-view="main" class="dashboard__main"></div>
-  </div>
 </div>
 
 <footer class="dashboard__footer">

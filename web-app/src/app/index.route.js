@@ -32,6 +32,14 @@
                   templateUrl: 'app/home/home.html',
               }
           }
+      })
+      .state('dashboard.belstop', {
+          url: '/belstop?belstopId',
+          views: {
+              'main@dashboard': {
+                  templateUrl: 'app/belstop/belstop.html',
+              }
+          }
       });
 
     $urlRouterProvider.otherwise('/');

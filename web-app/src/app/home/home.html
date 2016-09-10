@@ -1,52 +1,54 @@
+<div class="dashboard__hero">
 
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="page-header">
+            <h1>There are fantastic meetings happening around Belfast</h1>
+            <h2>Connect with people who share your tastes</h2>
+          </div>
+        </div><!-- /.col-xs-12 -->
+      </div>
+      <!-- /row -->
+
+      <form name="myForm" class="row">
+
+        <div class="col-xs-7">
+          <input type="text" class="form-control" placeholder="Search for a belstop...">
+        </div>
+
+        <div class="col-xs-3">
+          <select name="mySelect" id="mySelect"
+            ng-options="option.name for option in data.availableOptions track by option.id"
+            ng-model="data.selectedOption" class="form-control"></select>
+        </div>
+
+        <div class="col-xs-2">
+          <button class="btn btn-success" type="button">Go!</button>
+        </div>
+
+      </form>
+
+    </div>
+</div>
+
+<!-- {{belstops}}z -->
+
+<div class="container">
   <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
+    <div class="col-sm-6 col-md-4" ng-repeat="belstop in belstops">
+      <div class="thumbnail" ui-sref="dashboard.belstop({ belstopId: belstop.pk})">
         <img src="http://placehold.it/350x250">
         <div class="caption">
-          <h3>Place Name</h3>
-          <p><span class="label-category label-category-1">category-1</span></p>
-          <p><i class="fa fa-clock-o" aria-hidden="true"></i> 12pm</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> 13 attendees</p>
+          <h3>{{belstop.owner}}</h3>
+          <p><span class="label-category label-category-1">{{belstop.category}}</span></p>
+          <p><i class="fa fa-clock-o" aria-hidden="true"></i> Time available: {{belstop.times_available}}</p>
+          <p><i class="fa fa-check" ng-if="belstop.accepts_belPoints === true"></i> Accepts bellpoints: yes</p>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="http://placehold.it/350x250">
-        <div class="caption">
-          <h3>Place Name</h3>
-          <p><span class="label-category label-category-2">category-2</span></p>
-          <p><i class="fa fa-clock-o" aria-hidden="true"></i> 12pm</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> 13 attendees</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="http://placehold.it/350x250">
-        <div class="caption">
-          <h3>Place Name</h3>
-          <p><span class="label-category label-category-3">category-3</span></p>
-          <p><i class="fa fa-clock-o" aria-hidden="true"></i> 12pm</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> 13 attendees</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="http://placehold.it/350x250">
-        <div class="caption">
-          <h3>Place Name</h3>
-          <p><span class="label-category label-category-4">category-4</span></p>
-          <p><i class="fa fa-clock-o" aria-hidden="true"></i> 12pm</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> 13 attendees</p>
-        </div>
-      </div>
-    </div>
 
   </div>
   <!-- /row -->
+</div>
