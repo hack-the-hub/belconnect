@@ -2,6 +2,7 @@ from rest_framework import serializers
 from api.models import BelStop, BelMeeting
 from django.contrib.auth.models import User
 
+
 class BelStopSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
@@ -13,7 +14,7 @@ class BelStopSerializer(serializers.HyperlinkedModelSerializer):
 class BelMeetingSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = BelMeeting
-        fields = ('belStop', 'datetime', 'topic')
+        fields = ('belStop', 'datetime', 'topic', 'category')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     belstops = serializers.HyperlinkedRelatedField(many=True, view_name='belstop-detail', read_only=True)
