@@ -16,7 +16,15 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+# Creating the routers
+from belconnect import views
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter(schema_title='Pastebin API')
+router.register(r'belstops', views.BelStopViewSet)
+
 urlpatterns = [
+    url(r'^', include(router.urls)),
     url(r'^admin/', admin.site.urls),
     url(r'^', include('api.urls')),
     url(r'^api-auth/', include('rest_framework.urls',
