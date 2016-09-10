@@ -5,7 +5,7 @@
         <div class="col-xs-12">
           <div class="page-header">
             <h1>There are fantastic meetings happening around Belfast</h1>
-            <h2>Connect with people who share your tastes</h2>
+            <h3>Meet people, discuss about your interests and have fun</h3>
           </div>
         </div><!-- /.col-xs-12 -->
       </div>
@@ -36,7 +36,7 @@
   <div class="row">
     <div class="col-sm-6 col-md-4" ng-repeat="belmeeting in belmeetings">
       <div class="thumbnail" ui-sref="dashboard.belmeeting({ belmeetingId: belmeeting.pk})">
-        <img src="http://placehold.it/350x250">
+        <img src="assets/images/stops/{{belmeeting.pk}}.jpg">
         <div class="caption">
           <h3>{{belmeeting.topic}}</h3>
           <p><span class="label-category label-category-1">{{belmeeting.category}}</span></p>

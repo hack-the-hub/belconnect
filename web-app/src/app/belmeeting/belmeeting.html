@@ -5,12 +5,18 @@
         <h1>{{belmeeting.topic}}</h1>
       </div>
 
-      <p>When: {{belmeeting.datetime}}</p>
 
     </div><!-- /.col-xs-12 -->
+
+    <div class="col-xs-4">
+        <img class="img-responsive" src="assets/images/stops/{{belmeeting.pk}}.jpg">
+    </div>
+
+    <div class="col-xs-8">
+        <p><b>When:</b> {{belmeeting.datetime}}</p>
+        <p><b>Owner:</b> {{belmeeting.owner}}</p>
+        <p><b>Category:</b> Tech</p>
+    </div>
   </div>
   <!-- /row -->
 </div>
-
-
-{{belmeeting}}

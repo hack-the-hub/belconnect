@@ -22,10 +22,21 @@
         console.log('id: ' + id);
 
         var url = 'belmeetings/' + id;
+        var urlCat = 'categories';
+
 
         Restangular.oneUrl(url).get().then(function(result) {
             $scope.belmeeting = result;
         });
+
+        $scope.categories = {
+          '1': 'culture',
+          '2': 'sports',
+          '3': 'tech',
+          '4': 'culture',
+          '5': 'music'
+        }
+
 
 
 
