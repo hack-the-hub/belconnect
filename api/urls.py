@@ -10,6 +10,7 @@ router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^categories/$', views.getAllCategories, name='categories'),
     url(r'^register/$', views.CreateUserView.as_view(), name='users'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

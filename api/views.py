@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework import permissions
@@ -5,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
 from api.permissions import IsOwnerOrReadOnly
-from api.models import BelStop, BelMeeting
+from api.models import BelStop, BelMeeting, CATEGORIES
 from api.serializers import UserSerializer
 from api.serializers import BelStopSerializer, BelMeetingSerializer
 from rest_framework.generics import CreateAPIView
@@ -43,3 +44,6 @@ class CreateUserView(CreateAPIView):
     # set the permissions from the class
     permission_classes = (permissions.AllowAny,)
     serializer_class = UserSerializer
+
+def getAllCategories(request):
+    return HttpResponse(CATEGORIES)

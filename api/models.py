@@ -5,6 +5,34 @@ from django.db import models
 from rest_framework import viewsets
 
 
+CULTURE = 1
+ARTS = 2
+SPORTS = 3
+HISTORY = 4
+MUSIC = 5
+SOCIAL = 6
+POLITICS = 7
+TECH = 8
+TRAVEL = 9
+HOBBIES = 10
+FAMILY = 11
+OTHER = 12
+
+CATEGORIES = (
+    (OTHER,'Other'),
+    (CULTURE,'Culture'),
+    (SPORTS, 'Sports'),
+    (HISTORY,'History'),
+    (MUSIC,'Music'),
+    (SOCIAL,'Social'),
+    (POLITICS,'Politics'),
+    (TECH,'Tech'),
+    (TRAVEL,'Travel'),
+    (HOBBIES,'Hobbies'),
+    (FAMILY,'Family'),
+    (OTHER,'Other')
+)
+
 # Create your models here.
 class BelStop(models.Model):
     created = models.DateTimeField(auto_now_add=True)
@@ -22,35 +50,6 @@ class BelStop(models.Model):
         return self.location
 
 class BelMeeting(models.Model):
-
-    CULTURE = 1
-    ARTS = 2
-    SPORTS = 3
-    HISTORY = 4
-    MUSIC = 5
-    SOCIAL = 6
-    POLITICS = 7
-    TECH = 8
-    TRAVEL = 9
-    HOBBIES = 10
-    FAMILY = 11
-    OTHER = 12
-
-    CATEGORIES = (
-        (OTHER,'Other'),
-        (CULTURE,'Culture'),
-        (SPORTS, 'Sports'),
-        (HISTORY,'History'),
-        (MUSIC,'Music'),
-        (SOCIAL,'Social'),
-        (POLITICS,'Politics'),
-        (TECH,'Tech'),
-        (TRAVEL,'Travel'),
-        (HOBBIES,'Hobbies'),
-        (FAMILY,'Family'),
-        (OTHER,'Other')
-    )
-
     created = models.DateTimeField(auto_now_add=True)
     belStop = models.ForeignKey(BelStop,null=True)
     datetime = models.DateTimeField(default=datetime.MAXYEAR, blank=True)
