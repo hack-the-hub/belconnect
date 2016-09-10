@@ -16,7 +16,7 @@ class BelMeetingSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = BelMeeting
-        fields = ('url', 'pk','owner','belStop', 'datetime', 'topic')
+        fields = ('url', 'pk','owner','belStop', 'datetime', 'topic', 'category')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     belstops = serializers.HyperlinkedRelatedField(many=True, view_name='belstop-detail', read_only=True)
