@@ -18,6 +18,9 @@ class BelStop(models.Model):
     class Meta:
         ordering = ('created',)
 
+    def __str__(self):
+        return self.location
+
 class BelMeeting(models.Model):
 
     CULTURE = 1
