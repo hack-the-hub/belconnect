@@ -13,3 +13,10 @@
     padding-top: $space * 3;
   }
 }
+
+.dashboard__footer {
+  background: $color-dark;
+  color: white;
+  margin-top: $space * 3;
+  padding: $space 0;
+}

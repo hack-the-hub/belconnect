@@ -16,6 +16,13 @@ $gray: #95a5a6;
 
 $space: 20px;
 
+$category-1: #1abc9c;
+$category-2: #2ecc71;
+$category-3: #3498db;
+$category-4: #9b59b6;
+$category-5: #e67e22;
+$category-6: #e74c3c;
+
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies
@@ -30,6 +37,29 @@ body,
   height: 100%;
 }
 
+
+.thumbnail {
+  color: white;
+  border-radius: 0;
+  border: 1px solid $light-gray;
+  background: $light-gray;
+}
+
+.label-category-1 {
+  background: $category-1;
+}
+.label-category-2 {
+  background: $category-2;
+}
+.label-category-3 {
+  background: $category-3;
+}
+.label-category-4 {
+  background: $category-4;
+}
+.label-category {
+  padding: 2px 4px;
+}
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
