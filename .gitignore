@@ -96,7 +96,12 @@ web-app/.sass-cache/
 web-app/.idea/
 web-app/.tmp/
 web-app/dist/
+
 .idea/
 assets/
 gulp/
 web-app/
+
+
+# heroku
+staticfiles
