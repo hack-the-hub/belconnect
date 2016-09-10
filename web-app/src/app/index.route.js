@@ -15,10 +15,28 @@
         controllerAs: 'main'
       })
       .state('dashboard', {
-        url: '/dashboard',
-        templateUrl: 'app/dashboard/dashboard.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        abstract: true,
+          url: '/dashboard',
+          views: {
+              '@': {
+                  templateUrl: 'app/dashboard/dashboard.html',
+              },
+              'sidebar@dashboard': {
+                  templateUrl: 'app/sidebar/sidebar.html',
+                  controller: 'SidebarController',
+                  controllerAs: 'sidebar',
+              }
+          }
+      })
+      .state('dashboard.home', {
+          url: '/home',
+          views: {
+              'main@dashboard': {
+                  templateUrl: 'app/home/home.html',
+                  controller: 'HomeController',
+                  controllerAs: 'home',
+              }
+          }
       });
 
     $urlRouterProvider.otherwise('/');
