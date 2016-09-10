@@ -1,0 +1,18 @@
+.home__header {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__logo {
+    text-align: center;
+    z-index: 10;
+  }
+  &__logo--bg {
+    position: absolute;
+    top: 50%;
+    margin-top: -250px;
+    z-index: 1;
+  }
+}
